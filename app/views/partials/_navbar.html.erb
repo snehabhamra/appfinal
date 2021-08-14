@@ -7,16 +7,27 @@
     <div class="collapse navbar-collapse" id="navbarNav">
     <nav class="nav nav-masthead justify-content-center float-md-end">
     <div class="authorisation buttons">
-    <%= button_to "Log In", class: "btn btn-dark" %>
+    <% if user_signed_in?%>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+    <% else %>
+    <%= button_to "Log In", new_user_session_path, :method => :get, class: "btn btn-dark" %>
+    <%end%>
     </div>
     <div>
-    <%= button_to "Account", class: "btn btn-dark" %>
+    <% if user_signed_in?%>
+    <%= button_to "Account", edit_user_registration_path, method: :get, class: "btn btn-dark" %>
+    <%end%>
     </div>
     <div>
-    <%= button_to "Shop", class: "btn btn-dark" %>
+    <% if user_signed_in?%>
+    <%= button_to "Shop", root_path, method: :get, class: "btn btn-dark" %>
+    <%end%>
     </div>
-    <form class="d-flex">
+  </nav>
+      <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-dark" type="submit">Search</button>
-    </form>
+      </form>
+    </div>
+  </div>
 </nav>
