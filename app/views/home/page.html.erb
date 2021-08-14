@@ -1,2 +1,14 @@
-<h1>Home#page</h1>
-<p>Find me in app/views/home/page.html.erb</p>
+
+<main class="px-3">
+  <h1>Find your perfect kicks today</h1>
+  <br></br>
+  <p class="lead">Buy and sell only the most coveted pieces at Unscr!pted, Australias leading underground streetwear marketplace.</p>
+  <br></br>
+  <p class="lead">
+    <% if user_signed_in?%>
+    <%= link_to 'Start Browsing', root_path, method: :get, class: "nav-link" %>
+    <% else %>
+    <%= link_to "Log In", new_user_session_path, method: :get, class: "nav-link" %>
+    <%end%>
+  </p>
+</main>
