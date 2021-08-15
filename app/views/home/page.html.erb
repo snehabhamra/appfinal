@@ -1,14 +1,17 @@
-
+<div class="container">
 <main class="px-3">
+  <br></br>
+  <br></br>
   <h1>Find your perfect kicks today</h1>
   <br></br>
   <p class="lead">Buy and sell only the most coveted pieces at Unscr!pted, Australias leading underground streetwear marketplace.</p>
   <br></br>
   <p class="lead">
     <% if user_signed_in?%>
-    <%= link_to 'Start Browsing', root_path, method: :get, class: "nav-link" %>
+    <%= link_to "Start Browsing", products_path, method: :get, class: "nav-link" %>
     <% else %>
     <%= link_to "Log In", new_user_session_path, method: :get, class: "nav-link" %>
     <%end%>
   </p>
 </main>
+</div

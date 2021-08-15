@@ -1,0 +1,5 @@
+<%= simple_form_for new_product_path, url: {action: "create"} do |f| %>
+    <h1 class="heading">New Product</h1>
+    <%= render 'form', product: @product %>
+    <%= link_to 'Submit', products_path, method: :create %>
+<% end %>

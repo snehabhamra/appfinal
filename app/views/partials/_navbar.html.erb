@@ -14,20 +14,20 @@
     <%end%>
     </div>
     <div>
-    <% if user_signed_in?%>
-    <%= button_to "Account", edit_user_registration_path, method: :get, class: "btn btn-dark" %>
-    <%end%>
+        <% if user_signed_in?%>
+            <%= button_to "Account", edit_user_registration_path, method: :get, class: "btn btn-dark" %>
+        <%end%>
     </div>
     <div>
-    <% if user_signed_in?%>
-    <%= button_to "Shop", root_path, method: :get, class: "btn btn-dark" %>
-    <%end%>
+        <% if user_signed_in?%>
+            <%= button_to "Shop", products_path, method: :get, class: "btn btn-dark" %>
+        <%end%>
     </div>
   </nav>
+  </div>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-dark" type="submit">Search</button>
       </form>
-    </div>
-  </div>
+
 </nav>
