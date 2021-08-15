@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :products, only: [:show, :new, :destroy, :create, :update, :index, :edit] 
-  resources :pictures
+  resources :pictures, :image_url
   devise_for :users
   root 'home#page'
   # get 'navbar/shop' => :get, to 'products#show'
