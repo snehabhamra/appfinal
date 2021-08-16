@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_one :profile
   has_one :picture
+  
+  def assign_default_role
+    add_role(:user)
+  end
 end
