@@ -21,12 +21,17 @@ class ProductsController < ApplicationController
     def seller_id
       current_user = Seller.id
     end
+
+    def picture
+      @picture= Image_url
+    end
   
     # POST /products or /products.json
     def create
-      @product = Product.create(params[:product_id])
-      if @product.save!
-        redirect_to products_path(@product)
+      @product = Product.create(product_params)
+      @product.picture.attach(product_params[:picture])
+      if @product.save 
+        render :show, status: :created
       end
     end
   
