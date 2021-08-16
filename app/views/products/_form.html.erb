@@ -4,8 +4,12 @@
     <%= f.input :Description %>
     <%= f.input :Price %>
     <%= f.input :Category, collection: ["footwear", "accessories", "menswear", "womenswear"] %>
-    <%= f.file_field :Picture %>
-
+    <div class="form-group">
+      <% if @product.picture.attached? %>
+        <%= image_tag product.picture %>
+      <% end %>
+      <%= f.file_field :picture %>
+    </div>
   </div>
   
   <p>

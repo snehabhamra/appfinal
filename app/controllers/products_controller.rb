@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
     def create
       @product = Product.create(product_params)
       @product.picture.attach(product_params[:picture])
-      if @product.save 
+      if @product.save && picture.save
         render :show, status: :created
       end
     end
@@ -44,6 +44,7 @@ class ProductsController < ApplicationController
   
     # DELETE /products/1 or /products/1.json
     def destroy
+        Product.find(params[:id]).delete
         @product = Product.delete(params[:id])
         redirect_to products_path
     end
