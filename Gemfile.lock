@@ -100,6 +100,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
+    content_disposition (1.0.0)
     crass (1.0.6)
     devise (4.8.0)
       bcrypt (~> 3.0)
@@ -107,6 +108,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    down (5.2.3)
+      addressable (~> 2.8)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.3)
@@ -139,8 +142,6 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.3-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.12.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -209,6 +210,9 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    shrine (3.4.0)
+      content_disposition (~> 1.0)
+      down (~> 5.1)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -273,6 +277,7 @@ DEPENDENCIES
   rolify
   sass-rails (>= 6)
   selenium-webdriver
+  shrine
   simple_form
   spring
   sprockets-rails

@@ -31,8 +31,9 @@ class ProductsController < ApplicationController
       @product = Product.new(product_params)
       @product.picture.attach(product_params[:picture])
       respond_to do |format| 
-        format.html {redirect_to products_path(@product), notice: 'Product was successfully listed'}
-        format.json {render :show, status: :created, location: @product}
+        if @product.save 
+          format.html {redirect_to products_path(@product), notice: 'Product was successfully listed'}
+          format.json {render :show, status: :created, location: @product}
       end
     end
   
