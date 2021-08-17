@@ -6,9 +6,14 @@
       <%= f.input :Price %>
       <%= f.input :Category, collection: ["footwear", "accessories", "menswear", "womenswear"] %>
       <%= f.file_field :Picture %>
-      <%= link_to 'Submit', product_path, method: :patch %>
     </div>
+    <br>
+    <br>
     <p>
-    <%= link_to 'Back', products_path %>
+        <%= link_to 'Submit', product_path, method: :patch %>
+    </p>
+    <br>
+    <p>
+        <%= link_to 'Back', products_path %>
     </p>
   <%end%>

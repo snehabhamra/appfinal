@@ -23,23 +23,27 @@ class ProductsController < ApplicationController
     end
 
     def picture
-      @picture= Image_url
+      @picture = picture
     end
   
     # POST /products or /products.json
     def create
-      @product = Product.create(product_params)
+      @product = Product.new(product_params)
       @product.picture.attach(product_params[:picture])
-      if @product.save && picture.save
-        render :show, status: :created
+      respond_to do |format| 
+        format.html {redirect_to products_path(@product), notice: 'Product was successfully listed'}
+        format.json {render :show, status: :created, location: @product}
       end
     end
   
     def update
         @product = Product.find_by(product_params[:product_id])
+        respond_to do |format|
             if @product.update(product_params)
-                redirect_to products_path(@product)
+              format.html {redirect_to products_path(@product), notice: 'Product was successfully updated'}
+              format.json {render :show, status: :updated, location: @product}
             end
+        end
     end
   
     # DELETE /products/1 or /products/1.json

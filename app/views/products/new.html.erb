@@ -1,4 +1,4 @@
-<%= simple_form_for @product, url: {action: "create"} do |f| %>
+<%= simple_form_for products_path, url: {action: "create"} do |f| %>
     <h1 class="heading">New Product</h1>
     <%= render 'form', product: @product %>
     <%= link_to 'Submit', products_path, method: :create %>
